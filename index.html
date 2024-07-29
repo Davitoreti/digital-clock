@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital watch</title>
+    <title>Digital clock</title>
+    <script src="index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Digital watch</h1>
+<body class="flex flex-col justify-center items-center h-screen gap-20">
+    <div class="text-center mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Digital clock</h1>
+      </div>
+    
+      <div class="clock">
+        <div id="hour-hand" class="hand hour-hand"></div>
+        <div id="minute-hand" class="hand minute-hand"></div>
+        <div id="second-hand" class="hand second-hand"></div>
+        <div class="center-circle"></div>
+
+        <div class="number number-1">1</div>
+        <div class="number number-2">2</div>
+        <div class="number number-3">3</div>
+        <div class="number number-4">4</div>
+        <div class="number number-5">5</div>
+        <div class="number number-6">6</div>
+        <div class="number number-7">7</div>
+        <div class="number number-8">8</div>
+        <div class="number number-9">9</div>
+        <div class="number number-10">10</div>
+        <div class="number number-11">11</div>
+        <div class="number number-12">12</div>
+      </div>
 </body>
 </html>

@@ -1,36 +1,21 @@
-const hourPointer = document.getElementById('hour-hand');
-const minutePointer = document.getElementById('minute-hand');
-const secondPointer = document.getElementById('second-hand');
+function getTime() {
+    const date = new Date();
 
-const currentTime = new Date();
-const hourCurrent = currentTime.getHours();
-const minuteCurrent = currentTime.getMinutes();
-const secondCurrent = currentTime.getSeconds();
+    return {
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        seconds: date.getSeconds(),
+    };
+}
 
-let second = 0;
-let minute = 0;
-let hour = 0;
+setInterval(() => {
 
-const timeNow = setInterval(() => {
-    
-    do {
-        secondPointer.classList.add('move');
-    
-    second++;
+    const time = getTime();
+    const seconds = time.seconds;
+    const minutes = time.minutes;
+    const hours = time.hours;
 
-    
-    } while (second <= 60);
-
-
-    if(second === 60){
-        second = 0;
-        minute++
-    }
-
-    if(minute === 60){
-        minute = 0;
-        hour++
-    }
-
-
+    document.getElementById('second-hand').style.transform = `rotate(${seconds * 6}deg)`;
+    document.getElementById('minute-hand').style.transform = `rotate(${minutes * 6}deg)`;
+    document.getElementById('hour-hand').style.transform = `rotate(${hours * 30}deg)`;
 }, 1000)
